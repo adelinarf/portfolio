@@ -72,6 +72,12 @@ import selenium from './assets/tech/selenium.png';
 import cucumber from './assets/tech/cucumber.svg';
 import playwright from './assets/tech/playwright.png';
 import csharp from './assets/tech/csharp.png';
+import flutter from './assets/tech/flutter.png';
+import express from './assets/tech/express.png';
+import streamlit from './assets/tech/streamlit.png';
+import unity from './assets/tech/unity.png';
+import godot from './assets/tech/godot.png';
+
 
 const colors = {
   "Gemini 2.5 Flash": "green", "JavaScript": "blue", "Node.js": "red", "Express": "red",
@@ -80,7 +86,7 @@ const colors = {
   "React": "blue", "Tailwind CSS": "blue", "Framer Motion": "blue", "Recharts": "blue",
   "Flutter": "blue", "Dart": "blue", "Firebase": "red", "Cloudinary": "yellow",
   "GDScript": "red", "TypeScript": "red", "Assembly": "red", "Haskell": "red",
-  "Hugging Face Spaces": "yellow"
+  "Hugging Face Spaces": "yellow","Three.js":"blue"
 };
 
 // --- Helper Components ---
@@ -138,7 +144,7 @@ function GridForProjects({ modal } : {modal:any}) {
       "title": "AI-Driven 3D Room Designer",
       "images": [model3d1, model3d2, model3d3, model3d4],
       "description": "Developed a specialized 3D interior design application that allows users to scrape real-world furniture products from e-commerce sites and instantly convert them into interactive 3D models for spatial planning, using Gemini.",
-      "tech": ["Gemini 2.5 Flash", "JavaScript", "HTML/CSS", "Node.js", "Express", "Puppeteer", "Axios", "Docker", "Hugging Face Spaces"],
+      "tech": ["Gemini 2.5 Flash", "JavaScript", "Three.js","HTML/CSS", "Node.js", "Express", "Puppeteer", "Axios", "Docker", "Hugging Face Spaces"],
       "url": "https://huggingface.co/spaces/adelinaf/3d-room-designer",
       "list": ["Integrated Google Gemini 2.5 Flash via API to perform image-to-3D reconstruction", "Built a robust 3D rendering engine using Three.js, featuring custom room geometry (adjustable width, depth, and wall height), dynamic lighting, and texture mapping for floors and walls.", "Developed a backend scraping service using Puppeteer with the Stealth Plugin to navigate complex e-commerce DOMs and extract high-quality product imagery and metadata while bypassing bot-detection.", "Implemented custom 3D transformation controls, allowing users to rotate, scale, and position AI-generated furniture within a coordinate-correct 3D space.", "Designed the application using Docker, ensuring a consistent environment for the Puppeteer-heavy backend and simplifying deployment to cloud platforms like Hugging Face or AWS."]
     },
@@ -228,6 +234,9 @@ function AboutMe({ title, text } : {title:string,text:string}) {
       <Card.Section h={10} bg={theme.primaryColor} />
       <Text fw={700} size="lg" mt="xl">{title}</Text>
       <Text mt="xs" c="dimmed" size="md">{text}</Text>
+      <Text mt="xs" c="dimmed" size="md"> <a href={`mailto:adelinafigueiraf@gmail.com`}>
+      Contact me
+    </a> </Text>
     </Card>
   );
 }
@@ -310,12 +319,13 @@ function Header() {
   };
 
   const stack = [
-    { "Frontend": [{ "name": "HTML", "url": html }, { "name": "CSS", "url": css }, { "name": "JavaScript", "url": javascript }, { "name": "React", "url": react }, { "name": "Angular", "url": angular }, { "name": "TypeScript", "url": typescript }, { "name": "SASS", "url": sass }, { "name": "Tailwind", "url": tailwind }, { "name": "Bootstrap", "url": bootstrap }] },
-    { "Backend": [{ "name": "Python", "url": python }, { "name": "Django", "url": django }, { "name": "Flask", "url": flask }, { "name": "Node.js", "url": nodejs }, { "name": "SQL", "url": sql }, { "name": "MongoDB", "url": mongodb }, { "name": "PostgreSQL", "url": postgresql }, { "name": "SQLite", "url": sqlite }, { "name": "SQLAlchemy", "url": sqalchemy }, { "name": "Neo4j", "url": neo4j }] },
+    { "Frontend": [{ "name": "HTML", "url": html }, { "name": "CSS", "url": css }, { "name": "JavaScript", "url": javascript }, { "name": "React", "url": react }, { "name": "Angular", "url": angular }, { "name": "TypeScript", "url": typescript },{"name" : "Flutter","url":flutter}, { "name": "SASS", "url": sass }, { "name": "Tailwind", "url": tailwind }, { "name": "Bootstrap", "url": bootstrap }, {"name":"Streamlit", "url":streamlit}] },
+    { "Backend": [{ "name": "Python", "url": python }, { "name": "Django", "url": django }, { "name": "Flask", "url": flask }, { "name": "Node.js", "url": nodejs },{"name":"Express","url":express}, { "name": "SQL", "url": sql }, { "name": "MongoDB", "url": mongodb }, { "name": "PostgreSQL", "url": postgresql }, { "name": "SQLite", "url": sqlite }, { "name": "SQLAlchemy", "url": sqalchemy }, { "name": "Neo4j", "url": neo4j }] },
     { "Full Stack Tools": [{ "name": "Git", "url": git }, { "name": "Firebase", "url": firebase }] },
     { "Other languages": [{ "name": "C#", "url": csharp }, { "name": "Haskell", "url": haskell }, { "name": "R", "url": rlanguage }, { "name": "Kotlin", "url": kotlin }, { "name": "Assembly", "url": assembly }, { "name": "Java", "url": java }, { "name": "C", "url": clanguage }] },
     { "LLM Tools": [{ "name": "Hugging Face", "url": huggingface }, { "name": "LangChain", "url": langchain }, { "name": "LangGraph", "url": langgraph }, { "name": "Milvus", "url": milvus }] },
-    { "Testing": [{ "name": "Jest", "url": jest }, { "name": "Selenium", "url": selenium }, { "name": "Cucumber", "url": cucumber }, { "name": "Playwright", "url": playwright }] }
+    { "Testing": [{ "name": "Jest", "url": jest }, { "name": "Selenium", "url": selenium }, { "name": "Cucumber", "url": cucumber }, { "name": "Playwright", "url": playwright }] },
+    {"Game Development Engines" : [{"name":"Godot", "url":godot}, {"name":"Unity","url":unity}]}
   ];
 
   const onDownload = () => {
@@ -344,7 +354,7 @@ function Header() {
             <Button variant="subtle" size="xs" onClick={() => scrollTo('about')}>About</Button>
             <Button variant="subtle" size="xs" onClick={() => scrollTo('edu')}>Education</Button>
             <Button variant="subtle" size="xs" onClick={() => scrollTo('exp')}>Experience</Button>
-            <Button variant="subtle" size="xs" onClick={() => scrollTo('tech')}>Tech</Button>
+            <Button variant="subtle" size="xs" onClick={() => scrollTo('tech')}>Technologies</Button>
             <Button variant="subtle" size="xs" onClick={() => scrollTo('projects')}>Projects</Button>
             <Button variant="subtle" size="xs" onClick={() => scrollTo('courses')}>Courses</Button>
             <Button variant="filled" size="xs" color="dark" leftSection={<IconDownload size={16}/>} component="a" onClick={onDownload}>Resume</Button>
@@ -368,7 +378,7 @@ function Header() {
           <Button variant="light" fullWidth onClick={() => scrollTo('about')}>About</Button>
           <Button variant="light" fullWidth onClick={() => scrollTo('edu')}>Education</Button>
           <Button variant="light" fullWidth onClick={() => scrollTo('exp')}>Experience</Button>
-          <Button variant="light" fullWidth onClick={() => scrollTo('tech')}>Tech</Button>
+          <Button variant="light" fullWidth onClick={() => scrollTo('tech')}>Technologies</Button>
           <Button variant="light" fullWidth onClick={() => scrollTo('projects')}>Projects</Button>
           <Button variant="light" fullWidth onClick={() => scrollTo('courses')}>Courses</Button>
           <Divider my="sm"  />
@@ -392,7 +402,7 @@ function Header() {
           </Modal>
         )}
         <Stack gap={60} style={{ width: '100%' }}>
-          <div id="about"><Title order={1}>About Me</Title><Space h="md" /><AboutMe title="Hi! I'm Adelina Figueira" text="I'm a Software Engineer & 2025 Computer Engineering Graduate specializing in AI, Knowledge Graphs, and Full-Stack Development." /></div>
+          <div id="about"><Title order={1}>About Me</Title><Space h="md" /><AboutMe title="Hi! I'm Adelina Figueira" text="I'm a Software Engineer and 2025 Computer Engineering Graduate specializing in AI, Knowledge Graphs, and Full-Stack Development. I also have an interest in game development, data science and IoT." /></div>
           <div id="edu"><Title order={1}>Education</Title><Space h="md" /><EducationCard title="Simón Bolívar University (Caracas, Venezuela)" text="Computer Engineering (2025)" thesis="Thesis: Construction of a knowledge graph for reasoning about code in Large Language Models" explanation="This work tried to solve the code search problem in GitHub repositories with Python code by creating knowledge graphs, and using the RAG method alongside an LLM to be able to find a proper response to the user's queries in natural language about the repository's code structure." /></div>
           <div id="exp"><Title order={1}>Work Experience</Title><Space h="md" /><TimelineElement /></div>
           <div id="tech"><Title order={1}>Technologies</Title><Space h="md" />{stack.map((item, i) => <TechnologiesGrid key={i} title={Object.keys(item)[0]} tech={Object.values(item)[0]} />)}</div>
