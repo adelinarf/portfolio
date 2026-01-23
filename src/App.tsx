@@ -199,7 +199,7 @@ function GridForProjects({ modal } : {modal:any}) {
     {
       "title": "Pacman game",
       "images": [assembly],
-      "description": "Developed a fully functional retro-style Pac-Man game written entirely in x86 Assembly language. This project involved direct manipulation of hardware registers, video memory, and system interrupts to create a real-time interactive environment.",
+      "description": "Developed a fully functional retro-style Pac-Man game written entirely in Assembly language. This project involved direct manipulation of hardware registers, video memory, and system interrupts to create a real-time interactive environment.",
       "tech": ["Assembly"],
       "url": "https://github.com/adelinarf/PacmanAssembly",
       "list": ["Implemented the game’s data segment to efficiently store player coordinates, ghost states, and the game board grid using direct memory addressing.", "Implemented custom graphics routines to render the maze, characters, and pellets by writing pixel or character data directly to video memory", "Developed low-level logic to handle spatial collisions between Pac-Man, ghosts, and walls, utilizing bitwise operations and coordinate comparison for high-performance execution.", "Integrated with the system clock for frame-rate synchronization, ensuring consistent game speed across different CPU cycles.", "Designed modular procedures (PROCs) to handle distinct game states, such as 'Score Update', 'Ghost Movement', and 'Game Over' sequences, managing the stack manually for each call."]
